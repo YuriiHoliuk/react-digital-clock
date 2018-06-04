@@ -1,5 +1,7 @@
 const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const htmlPlugin = new HtmlWebpackPlugin({
   template: './src/index.html',
@@ -30,6 +32,14 @@ module.exports = {
               localIdentName: '[name]_[local]_[hash:base64]',
               sourceMap: true,
               minimize: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                autoprefixer()
+              ]
             }
           },
           {
