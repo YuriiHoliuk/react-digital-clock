@@ -2,9 +2,9 @@ import React from 'react';
 
 import * as styles from './timer.scss';
 
-import Clock from '../Clock/Clock.jsx';
+import { Clock } from '../Clock/Clock';
 
-export default class Timer extends React.Component {
+export class Timer extends React.Component {
   constructor(props) {
     super(props);
 
