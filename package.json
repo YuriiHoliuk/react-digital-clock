@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot",
+    "serve": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "lint": "tslint 'src/**/*.ts*'"
   },

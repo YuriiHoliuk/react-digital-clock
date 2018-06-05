@@ -6,11 +6,11 @@
 
 ### Lint
 
-Use ```npm run lint``` OR ```yarn lint``` to run eslint on project
+Use ```npm run lint``` OR ```yarn lint``` to run tslint on project
 
 ### Serve
 
-Use ```npm start``` OR ```yarn start``` to serve project on localhost:8080
+Use ```npm run serve``` OR ```yarn serve``` to serve project on localhost:8080
 
 ### Build
 
