@@ -1,8 +1,2 @@
-@font-face {
-  font-family: Digital;
-  src: url('./fonts/digital-dream.fat.ttf');
-}
-
-body {
-  margin: 0;
-}
+@import './styles/fonts';
+@import './styles/global';

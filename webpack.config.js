@@ -27,10 +27,11 @@ module.exports = {
             loader: 'css-loader',
             options: {
               module: true,
-              importLoaders: 1,
+              importLoaders: 2,
               localIdentName: '[name]_[local]_[hash:base64]',
               sourceMap: true,
               minimize: true,
+              camelCase: true
             },
           },
           {
@@ -42,7 +43,7 @@ module.exports = {
             },
           },
           {
-            loader: 'sass-loader',
+            loader: 'sass-loader'
           },
         ],
       },

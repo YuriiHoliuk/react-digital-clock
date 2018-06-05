@@ -4,21 +4,25 @@ import { Clock } from '../../components/Clock/Clock';
 
 import * as styles from './timer.scss';
 
-export class Timer extends React.Component {
+export interface ITimerState {
+  date: Date;
+}
+
+export class Timer extends React.Component<{}, ITimerState> {
 
   state = {
     date: new Date(),
   };
 
-  private intervalId: number;
+  private timerId: number;
+  private lastTimeStamp = 0;
 
   componentDidMount() {
-    // TODO: How to use types from window?
-    this.intervalId = (setInterval as (fn: () => any, interval: number) => number)(this.tick, 1000);
+    this.timerId = requestAnimationFrame(this.tick);
   }
 
   componentWillUnmount() {
-    clearInterval(this.intervalId);
+    cancelAnimationFrame(this.timerId);
   }
 
   render() {
@@ -30,8 +34,14 @@ export class Timer extends React.Component {
   }
 
   private tick = () => {
-    this.setState({
-      date: new Date(),
-    });
+    const date = new Date();
+    const timestamp = date.getTime();
+
+    if (timestamp - this.lastTimeStamp >= 1000) {
+      this.setState({ date });
+      this.lastTimeStamp = timestamp;
+    }
+
+    this.timerId = requestAnimationFrame(this.tick);
   }
 }
