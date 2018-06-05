@@ -12,11 +12,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        test: /\.tsx?$/,
+        exclude: '/node_modules/',
+        use: ['babel-loader', 'ts-loader']
       },
       {
         test: /\.scss$/,
@@ -66,5 +64,9 @@ module.exports = {
   plugins: [htmlPlugin],
   output: {
     path: path.join(__dirname, './docs'),
+  },
+  entry: './src/index.tsx',
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx']
   }
 };
