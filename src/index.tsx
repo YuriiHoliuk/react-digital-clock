@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Timer } from './containers/Timer/Timer';
+import { ClockWithTimer } from './components/Clock/ClockWithTimer';
 
 import './index.scss';
 
-ReactDOM.render(<Timer />, document.getElementById('app'));
+ReactDOM.render(<ClockWithTimer />, document.getElementById('app'));

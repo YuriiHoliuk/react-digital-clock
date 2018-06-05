@@ -7,5 +7,7 @@ export interface IClockProps {
 }
 
 export const Clock: React.SFC<IClockProps> = ({ date }) => (
-  <span className={styles.clock}>{date.toLocaleTimeString()}</span>
+  <div className={styles.wrapper}>
+    <span className={styles.clock}>{date.toLocaleTimeString()}</span>
+  </div>
 );

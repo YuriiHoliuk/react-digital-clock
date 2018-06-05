@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
+    "build": "rm -rf ./docs && webpack --mode production",
     "lint": "tslint 'src/**/*.ts*'"
   },
   "author": "",
